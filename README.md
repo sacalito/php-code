@@ -1,5 +1,5 @@
 # php-code
-Wordpress Plugin inspired by https://github.com/wp-plugins/insert-php-code-snippet
+Wordpress Plugin inspired from https://github.com/wp-plugins/insert-php-code-snippet
 
 if you code in PHP and you hate to make the initial setup just use WP as the CMS for your project and include your PHP files inside each page
 
