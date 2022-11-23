@@ -2,8 +2,8 @@
 /*
 Plugin Name: PHP Code 
 Plugin URI: https://sacalito.com
-Description: Insert and run PHP code in your pages and posts easily using shortcodes.     
-Version: 1.0.0
+Description: Insert PHP code from local files.     
+Version: 2.0.0
 Author: Sacalito
 Author URI: https://sacalito.com
 Text Domain: php-code
@@ -29,18 +29,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 if ( ! defined( 'ABSPATH' ) )
 	 exit;
 
-//error_reporting(E_ALL);
-
 define('PHP_CODE_ROOT',__FILE__);
 
-require( dirname( __FILE__ ) . '/php-functions.php' );
+require( dirname( __FILE__ ) . '/install.php' );
 
-require( dirname( __FILE__ ) . '/admin/install.php' );
-
-require( dirname( __FILE__ ) . '/admin/uninstall.php' );
-
-require( dirname( __FILE__ ) . '/admin/menu.php' );
+require( dirname( __FILE__ ) . '/php-code-functions.php' );
 
 require( dirname( __FILE__ ) . '/shortcode-handler.php' );
 
-?>
+require( dirname( __FILE__ ) . '/menu.php' );

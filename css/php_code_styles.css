@@ -458,7 +458,7 @@ margin: 0px 0px 0px 0px;
     }
     .xyz_our_plugins_new a:hover{text-decoration:underline;}
 
-    ..xyz_our_plugins_new a:active{box-shadow:none !important;}
+    .xyz_our_plugins_new a:active{box-shadow:none !important;}
 
     .xyz_our_plugins_new a span{
     background-color: #00a0d2;
