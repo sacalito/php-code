@@ -8,22 +8,6 @@ if (!function_exists('pretty')) {
 		}
 }
 
-function scanDirs($dir) {
-    $result = [];
-    foreach(scandir($dir) as $filename) {
-      if ($filename[0] === '.') continue;
-      $filePath = $dir . '/' . $filename;
-      if (is_dir($filePath)) {
-        foreach (scanDirs($filePath) as $childFilename) {
-          $result[] = $filename . '/' . str_replace(".php", "", $childFilename);
-        }
-      } else {
-        $result[] = str_replace(".php", "", $filename);
-      }
-    }
-    return $result;
-}
-
 if(!function_exists('php_code_trim_deep'))
 {
 

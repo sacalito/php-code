@@ -3,17 +3,13 @@ if ( ! defined( 'ABSPATH' ) )
     exit;
 
 function php_code_install(){
-    if(get_option('php_code_document_root')=='') {
-        add_option('php_code_document_root',($_SERVER['DOCUMENT_ROOT'].'/'));
-    }
     if(get_option('php_code_include_path')=='') {
-        add_option('php_code_include_path','includes/');
+        add_option('php_code_include_path', ($_SERVER['DOCUMENT_ROOT'].'/includes/'));
     }
 }
 
 function php_code_uninstall(){
     delete_option("php_code_include_path");
-    delete_option("php_code_document_root");
     }
 
 register_activation_hook( PHP_CODE_ROOT ,'php_code_install');

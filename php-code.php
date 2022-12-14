@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: PHP Code 
+Plugin Name: Sacalito's PHP Code 
 Plugin URI: https://sacalito.com
 Description: Insert PHP code from local files.     
 Version: 2.0.0
@@ -38,3 +38,9 @@ require( dirname( __FILE__ ) . '/php-code-functions.php' );
 require( dirname( __FILE__ ) . '/shortcode-handler.php' );
 
 require( dirname( __FILE__ ) . '/menu.php' );
+
+add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'php_code_settings_link');
+function php_code_settings_link( $links ) {
+	$links[] = '<a href="'.admin_url( 'admin.php?page=php-code-manage' ).'">'. __('Settings').'</a>';
+	return $links;
+}

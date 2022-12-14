@@ -4,8 +4,8 @@ if ( ! defined( 'ABSPATH' ) )
 
 
 if($_POST){
-    if (! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'ips-psetting_' )) {
-        wp_nonce_ays( 'ips-psetting_' );
+    if (! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'php-code-psetting_' )) {
+        wp_nonce_ays( 'php-code-psetting_' );
         exit;
     }
     else{
@@ -29,38 +29,22 @@ if($_POST){
 ?>
 
 <div>
+    <div style='background: white; padding:15px; margin: 10px; border-radius:20px; margin-top:40px;'>
+        <span style='color:red;'>Document Root: </span> <input type="text" value="<?php echo $_SERVER['DOCUMENT_ROOT'].'/'; ?>" readonly>
+    </div>
+
     <form method="post">
-        <?php wp_nonce_field('ips-psetting_');?>
+        <?php wp_nonce_field('php-code-psetting_');?>
         <div style="float: left;width: 98%">
-            <fieldset style=" width:100%; border:1px solid #F7F7F7; padding:10px 0px 15px 10px;">
-                <legend >
-                	<h3>Settings</h3>
-                </legend>
-                <table class="widefat"  style="width:99%;">
-                    <tr valign="top">
-                        <td scope="row" >
-                            <label for="xyz_ihs_sort">PHP Code Document Root</label>
-                        </td>
-                        <td>
-                            <input  name="php_code_document_root" type="text" id="php_code_document_root" value="<?php print(get_option('php_code_document_root')); ?>" />
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td scope="row" >
-                            <label for="xyz_ihs_sort">PHP Code Include Path</label>
-                        </td>
-                        <td>
-                            <input  name="php_code_include_path" type="text" id="php_code_include_path" value="<?php print(get_option('php_code_include_path')); ?>" />
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td scope="row" class=" settingInput" id="xyz_ips_bottomBorderNone">
-                        </td>
-                        <td id="xyz_ips_bottomBorderNone">
-                            <input style="margin:10px 0 20px 0;" id="submit" class="button-primary xyz_ips_bottonWidth" type="submit" value=" Update Settings " />
-                        </td>
-                    </tr>
-                </table>
+            <fieldset style=" width:100%; border:3px solid black; padding:10px 0px 15px 10px;">
+                <legend ><h2 style='color:blue;'>Settings</h2></legend>
+
+                <div style='background: white; padding:15px; margin: 10px; border-radius:20px;'>
+                    <label for="xyz_ihs_sort">PHP Code Include Path: </label>
+                    <input style='width: 300px;' name="php_code_include_path" type="text" id="php_code_include_path" value="<?php print(get_option('php_code_include_path')); ?>" />
+                    <input style="margin:10px 0 20px 0;" id="submit" class="button-primary xyz_ips_bottonWidth" type="submit" value=" Update Settings " />
+                </div>
+
             </fieldset>
         </div>
     </form>
@@ -69,9 +53,3 @@ if($_POST){
 
 <?php
 
-$dir = get_option('php_code_document_root').get_option('php_code_include_path');
-
-
-//$r = scanDirs("$dir");
-
-//pretty($r);
