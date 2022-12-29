@@ -15,19 +15,6 @@ function php_code_uninstall(){
 register_activation_hook( PHP_CODE_ROOT ,'php_code_install');
 register_uninstall_hook( PHP_CODE_ROOT, 'php_code_uninstall' );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**************** for future DEV 
 function xyz_ips_network_install($networkwide) {
     global $wpdb;
