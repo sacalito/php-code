@@ -15,9 +15,6 @@ if($_POST){
         $php_code_include_path=sanitize_text_field($_POST['php_code_include_path']);
         update_option('php_code_include_path',$php_code_include_path);
 
-        $php_code_document_root=sanitize_text_field($_POST['php_code_document_root']);
-        update_option('php_code_document_root',$php_code_document_root);
-
 ?>
 <div class="xyz_system_notice_area_style1" id="xyz_system_notice_area">
     Settings updated successfully. &nbsp;&nbsp;&nbsp;
